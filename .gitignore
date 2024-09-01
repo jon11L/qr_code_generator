@@ -1,3 +1,4 @@
 .qrvenv
 
 __pycache__/
+*.pyc
