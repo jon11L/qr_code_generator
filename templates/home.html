@@ -7,14 +7,23 @@
     <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+    <header>
+        
+    </header>
     <div id="container">
-        <div class ="title">
-            <h1>Welcome, Generate your Qr code in just a few clicks:</h1>
-            <h2>insert your link below to generate the QR code</h2>
-            <form action="/" method="POST">
-                <input type="text" name="link" />
-                <button type="submit">paste your link here</button>
+        <h1>Welcome, Generate your Qr code in a couple of clicks:</h1>
+        <h3>insert a link or text below to be inserted in  the QR code</h3>
+        <form action="/" method="POST">
+            <input type="text" name="link"/>
+            <button type="submit" >Generate QR code here</button>
+        </form>
+        {% if data %}
+        <div class="generated"> 
+            <p> Here is your QR Code.</p>
+            <img src="{{data}}" alt="">
         </div>
+        {% endif %}
     </div>
 </body>
 </html>
+

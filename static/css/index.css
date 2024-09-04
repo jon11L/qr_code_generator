@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+
+/*----------------- Header / NAV ------------------------- */
+header {
+    border-bottom: solid rgb(235, 168, 168) 3px;
+    background-color:rgb(227, 131, 96);
+    margin: -8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+}
+
+/* ------------------- main parts ------------------ */
+body{
+    background-color:rebeccapurple;
+    height: 150px;
+    font-family: Arial;
+    color: rgb(38, 54, 70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* flex-direction: column; */
+}
+
+#container {
+    width: 60%;
+    margin: auto;
+    height: 40px;
+    text-align: center;
+}
+
+form{
+    padding: 2rem;
+    margin: 25  px;
+}
+
+form button{
+    font-size: 18px;
+    background-color: cadetblue;
+    width: 30%;
+    color: white;
+    box-shadow: 5px 5px 10px black;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+form input{
+    width: 40%;
+}
+
+
+@media screen and (max-width: 768px) {
+    #container {
+        width: 90%;
+    }
+    
+    h1 {
+        font-size: 200%;
+    }
+}
+
