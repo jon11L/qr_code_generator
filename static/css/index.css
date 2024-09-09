@@ -22,8 +22,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    /* flex-direction: column; */
+}
+
+h1{
+    font-weight:bold;
+
 }
 
 #container {
@@ -31,6 +34,19 @@ body{
     margin: auto;
     height: 40px;
     text-align: center;
+}
+
+#pick-color {
+    /* display: flex; */
+    flex-direction: column;
+    width:60%;
+    margin: auto;
+    text-align: center;
+}
+
+#pick-color p, 
+#pick-color input {
+    margin-bottom: 15px;
 }
 
 form{
@@ -46,12 +62,16 @@ form button{
     box-shadow: 5px 5px 10px black;
     border-radius: 0.5rem;
     cursor: pointer;
+    margin-top: 15px;
 }
 
 form input{
     width: 40%;
 }
 
+.generated {
+    padding-bottom: 50px;
+}
 
 @media screen and (max-width: 768px) {
     #container {
@@ -62,4 +82,3 @@ form input{
         font-size: 200%;
     }
 }
-
