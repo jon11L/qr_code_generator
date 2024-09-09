@@ -15,13 +15,14 @@ def home():
 
 @app.route("/", methods=["POST"])
 def generate_qr():
-    ''' create QRcode with data input from user and render QRcode image back'''
+    ''' create QRcode including data given by user and render QRcode image back'''
     memory = BytesIO()
-    
+    # --- getting the datas from the user, 
     color_1 = request.form.get("fill-color")
     color_2 = request.form.get("background-color")
     data = request.form.get("link")
 
+    # --- QRcode creation -----
     qr = qrcode.QRCode(version=1,
     error_correction=qrcode.constants.ERROR_CORRECT_L,
     box_size=15,
@@ -30,37 +31,14 @@ def generate_qr():
 
     qr.add_data(data)
     qr.make(fit=True)
-    # - will make the user choose the color from a selection
-
-    # create color1-2 variable put them as a form input in the front page.
-    # put these variable in the parameter below, i can use line 20 for template
-
-    # img = qr.make_image(fill_color="black", back_color="white")
     img = qr.make_image(fill_color=color_1, back_color=color_2)
 
+    # ---- save the created image ---- 
     img.save(memory)
-
     memory.seek(0)
     base64_img = "data:image/png;base64," + b64encode(memory.getvalue()).decode("ascii")
 
-
     return render_template("home.html" ,data=base64_img)
-
-
-
-# def generate_qr():
-#     ''' create QRcode with data input from user and render QRcode image back'''
-#     memory = BytesIO()
-#     data = request.form.get("link")
-
-#     img = qrcode.make(data)
-
-#     img.save(memory)
-#     memory.seek(0)
-
-#     base64_img = "data:image/png;base64," + b64encode(memory.getvalue()).decode("ascii")
-
-#     return render_template("home.html" ,data=base64_img)
 
 
 if __name__ == "__main__":
