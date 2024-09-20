@@ -9,27 +9,37 @@
     <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    <header>
-        
-    </header>
     <div id="container">
-        <h1>Welcome, Generate your Qr code in a couple of clicks:</h1>
+        <h1>Generate your Qr code in a couple of clicks:</h1>
         <h3>insert a link or text below to be inserted in  the QR code</h3>
+
+                <p>optionally, select the desired colors below, color 1 is the filling , 2 is the background.</p>
+                <p>if left unchanged, the Qrcode will remain black and white.</p>
 
         <form action="/" method="POST">
             <div id="pick-color">
-                <p>color 1</p>
-                <input type="color" id="fg-color" name="fill-color" value="#000000" >
-                <p>color 2</p>
-                <input type="color" id="bg-color" name="background-color" value="#FFFFFF" > 
+                <section>
+                    <p>filling color </p>
+                    <input type="color" id="fg-color" name="fill-color" value="#000000" >
+                </section>
+                <section>
+                    <p>background color </p>
+                    <input type="color" id="bg-color" name="background-color" value="#FFFFFF" > 
+                </section>
+
             </div>
             <input type="text" name="link"/>
             <button type="submit" >Generate QR code here</button>
         </form>
         {% if data %}
         <div class="generated"> 
-            <p> Here is your QR Code.</p>
-            <img src="{{data}}" alt="">
+            <p> Here is your QR Code (Download below).</p>
+            <img src="{{data}}" alt="" id="generated-qr">
+        </div>
+        <div id="download-btn">
+            <a href="{{data}}" download="qr-code" >
+                <button type="button" class="btn btn-primary">Download</button>
+            </a>
         </div>
         {% endif %}
     </div>
