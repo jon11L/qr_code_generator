@@ -1,10 +1,3 @@
-# QR code generator.
-
-
-### the idea is to make a simple webpage for user to be able to generate new QR code.
-
-### Learning about Flask framework in doing so.
-
 # QR Code Generator
 
 The purpose of this project is to create a simple web application where users can generate customized QR codes. The application is built using Python's Flask framework for the backend, and HTML/CSS for the frontend.
@@ -20,6 +13,3 @@ Before running the app, ensure that the following dependencies are installed. Th
 ```bash
 pip install -r requirements.txt
 ```
-
-
-
