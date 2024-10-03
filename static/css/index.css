@@ -3,15 +3,22 @@
 }
 
 /*----------------- Header / NAV ------------------------- */
-/* header {
-    border-bottom: solid rgb(235, 168, 168) 3px;
-    background-color:rgb(227, 131, 96);
+header {
+    border-bottom: solid rgb(0, 0, 0) 2px;
+    background-color:rgb(160, 155, 154);
     margin: -8px;
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
     align-items: center;
     position: sticky;
-} */
+}
+
+h1{
+    font-weight:bold;
+    padding-top: 15px;
+    padding-left: 100px;
+}
+
 
 /* ------------------- main parts ------------------ */
 body{
@@ -20,37 +27,37 @@ body{
     color: rgb(38, 54, 70);
 }
 
-h1{
-    font-weight:bold;
-    padding-top: 50px;
-
-}
-
 h3 {
-    margin-bottom: 25px;
+    margin-top: 20px;
 }
 
 #container {
-    width: 80%;
+    width: 70%;
     margin: auto;
     text-align: center;
 }
 
+
+/* --- color selection section --- */
 #pick-color {
-    padding-top: 50px; 
+    padding-top: 10px; 
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content:space-evenly;
     margin: auto;
     text-align: center;
+    font-weight: bold;
 }
 
 #pick-color section{
-    border-radius: 0.5rem;
     display:flex;
     flex-direction:column;
     align-items: center;
     width:auto;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 10px; 
+    /* margin: 0px -100px; */
 }
 
 #pick-color p, 
@@ -58,10 +65,8 @@ h3 {
     margin-bottom: 15px;
 }
 
-
-
 form{
-    padding: 2rem;
+    padding: 0rem 2rem;
 }
 
 form button{
@@ -70,41 +75,26 @@ form button{
     width: 30%;
     color: white;
     box-shadow: 5px 5px 10px black;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     cursor: pointer;
     margin-top: 15px;
 }
 
 form input[type="text"] {
-    width: 40%;
+    width: 30%;
 }
 
 #download-btn {
-    padding: 15px;
+    margin: 15px 0px;
 }
 
-/* Style buttons */
-/* .btn {
-    background-color: DodgerBlue;
-    border: none;
-    color: white;
-    padding: 12px 30px;
-    cursor: pointer;
-    font-size: 20px;
-    
-} */
-
-  /* Darker background on mouse-over */
-.btn:hover {
-    background-color: RoyalBlue;
+.generated {
+    margin-top: 15px;
 }
-
 
 img {
-    width: 30%;
-
+    width: 20%;
 }
-
 
 @media screen and (max-width: 768px) {
     #container {

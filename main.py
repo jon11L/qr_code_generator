@@ -13,15 +13,17 @@ def home():
 
 @app.route("/", methods=["POST"])
 def generate_qr():
-    ''' create QRcode including data given by user and render QRcode image back'''
+    ''' create QRcode, with data/link inserted by user and optionally color can be customized.
+        Default color value are black `color_1` and white `color_2`.
+    '''
     memory = BytesIO()
-    # --- getting the datas from the user, 
+    # --- getting the user's datas ---
     color_1 = request.form.get("fill-color")
     color_2 = request.form.get("background-color")
     data_passed = request.form.get("link")
 
     if not data_passed:
-        # --- if no data is passed, return with a message
+        # --- if no data is passed, then no QRcode created. ---
         return render_template("index.html")
     else:
         # --- QRcode creation -----
@@ -35,7 +37,7 @@ def generate_qr():
         qr.make(fit=True)
         img = qr.make_image(fill_color=color_1, back_color=color_2)
 
-        # ---- save the created image ---- 
+        # ---- save the created image in memory temporarily (qrcode not saved locally)---- 
         img.save(memory)
         memory.seek(0)
         base64_img = "data:image/png;base64," + b64encode(memory.getvalue()).decode("ascii")
