@@ -5,7 +5,7 @@ The purpose of this project is to create a simple web application where users ca
 ## Features
 - Users can input a link or text and the app generates a QR code.
 - Customizable colors for the filling and background colors.
-- Download option on the user side, only temporarily saved on servers side.
+- Download option on the user side, saved only temporarily in memory servers side.
 
 ## Requirements
 Before running the app, ensure that the following dependencies are installed. They can be installed via the `requirements.txt` file.
@@ -13,3 +13,8 @@ Before running the app, ensure that the following dependencies are installed. Th
 ```bash
 pip install -r requirements.txt
 ```
+
+before inserting a link
+![before inserting a link](templates/img/1.png)
+after inserting a link
+![after inserting a link ](templates/img/2.png)
